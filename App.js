@@ -32,7 +32,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Version: {Constants.expoConfig.version}</Text>
-      <Text>Upgrade [Version] and [Commit]{"\n"}</Text>
+      <Text>Upgrade [Version] and [Commit] and [buildNumber]{"\n"}</Text>
 
       <Button title={"Check isAvailable"} onPress={checkUpdate}></Button>
       <Text>
