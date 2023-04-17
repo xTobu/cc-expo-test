@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Button } from "react-native";
-import Updates from "expo-updates";
+import * as Updates from "expo-updates";
 import Constants from "expo-constants";
 
 export default function App() {
@@ -9,32 +9,36 @@ export default function App() {
 
   async function onFetchUpdateAsync() {
     try {
-      if (isAvailable) {
-        await Updates.fetchUpdateAsync();
-        await Updates.reloadAsync();
-      }
+      await Updates.fetchUpdateAsync();
+      await Updates.reloadAsync();
     } catch (error) {
       alert(`Error fetching latest Expo update: ${error}`);
     }
   }
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const update = await Updates.checkForUpdateAsync();
-        setIsAvailable(update.isAvailable);
-      } catch (error) {
-        // alert(`Error fetching latest Expo update: ${error}`);
-      }
+  async function checkUpdate() {
+    try {
+      const update = await Updates.checkForUpdateAsync();
+      setIsAvailable(update.isAvailable);
+    } catch (error) {
+      alert(`Error Updates.checkForUpdateAsync(): ${error}`);
     }
-    fetchData();
+  }
+
+  useEffect(() => {
+    // checkUpdate();
   }, []);
 
   return (
     <View style={styles.container}>
       <Text>Version: {Constants.expoConfig.version}</Text>
-      <Text>isAvailable: {isAvailable.toString()}</Text>
+      <Text>Upgrade [Version] and [Commit]{"\n"}</Text>
 
+      <Button title={"Check isAvailable"} onPress={checkUpdate}></Button>
+      <Text>
+        isAvailable: {isAvailable.toString()}
+        {"\n"}
+      </Text>
       <Button title="Fetch update" onPress={onFetchUpdateAsync} />
       <StatusBar style="auto" />
     </View>
