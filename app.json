@@ -2,7 +2,7 @@
   "expo": {
     "name": "cc-expo-test",
     "slug": "cc-expo-test",
-    "version": "1.0.2",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -34,7 +34,7 @@
       }
     },
     "runtimeVersion": {
-      "policy": "appVersion"
+      "policy": "sdkVersion"
     },
     "updates": {
       "url": "https://u.expo.dev/1e68bf81-eb66-4b4e-ad39-478384dc5eaa"
