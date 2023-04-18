@@ -15,7 +15,7 @@
       "**/*"
     ],
     "ios": {
-      "buildNumber": "2",
+      "buildNumber": "5",
       "supportsTablet": true,
       "bundleIdentifier": "com.xtobu.ccexpotest"
     },
@@ -36,7 +36,7 @@
       }
     },
     "runtimeVersion": {
-      "policy": "sdkVersion"
+      "policy": "appVersion"
     },
     "updates": {
       "url": "https://u.expo.dev/1e68bf81-eb66-4b4e-ad39-478384dc5eaa"
