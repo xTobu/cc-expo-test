@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Button } from "react-native";
+import * as Application from "expo-application";
 import * as Updates from "expo-updates";
 import Constants from "expo-constants";
 
@@ -31,6 +32,10 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      {/* <Text>
+        Application.nativeBuildVersion:
+        {Application.nativeBuildVersion}
+      </Text> */}
       <Text>app.json version: {Constants.expoConfig.version}</Text>
       {/* <Text>Build with [Version]</Text>
       <Text>Upgrade{"\n"}</Text> */}

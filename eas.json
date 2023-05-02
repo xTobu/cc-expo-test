@@ -10,21 +10,29 @@
       "distribution": "internal",
       "ios": {
         "resourceClass": "m-medium"
+      },
+      "env": {
+        "BUILD_MODE": "development"
       }
     },
     "preview": {
       "channel": "preview",
-      "autoIncrement": true,
       "distribution": "internal",
       "ios": {
         "resourceClass": "m-medium"
+      },
+      "env": {
+        "BUILD_MODE": "preview"
       }
     },
     "production": {
       "channel": "production",
-      "autoIncrement": true,
+      "distribution": "store",
       "ios": {
         "resourceClass": "m-medium"
+      },
+      "env": {
+        "BUILD_MODE": "production"
       }
     }
   },
